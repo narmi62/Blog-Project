@@ -1,0 +1,5 @@
+**/.git_backup/
+**/node_modules/
+**/.env
+**/.env.*
+!**/.env.example
