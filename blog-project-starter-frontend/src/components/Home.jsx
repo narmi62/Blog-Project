@@ -1,5 +1,4 @@
-import React from 'react'
-import Navbar from './common/Navbar'
+
 import BlogProfileImage from "../assets/Blog Website Design.jpg"
 import CSS from "../assets/css-3.png"
 import HTML from "../assets/html.png"
@@ -23,12 +22,12 @@ function Home() {
                 <div className="w-full sm:w-1/2 flex-col justify-center">
                     <h2 className='text-3xl md:text-6xl font-bold pb-2'>Hey! I Am</h2>
                     <h2 className='text-4xl md:text-7xl font-bold text-orange-400 py-2'>Narmatha P</h2>
-                    <img src={BlogProfileImage} className='w-60 block sm:hidden' alt="Blog Profile Image" />
+                    <img src={BlogProfileImage} className='w-60 block sm:hidden' alt="Blog Profile" />
                     <p className='py-2'>I can create stunning website for your company, Do check my works. I won't disappoint you. Try me for 7 Days before you decide anything.</p>
                     <button className='button-style mt-2'>Hire Me</button>
                 </div>
                 <div className='justify-center hidden sm:block'>
-                    <img src={BlogProfileImage} className='w-60 md:w-96 ' alt="Blog Profile Image" />
+                    <img src={BlogProfileImage} className='w-60 md:w-96 ' alt="Blog Profile" />
 
                 </div>
 
@@ -36,12 +35,12 @@ function Home() {
 
 
             <div className='flex justify-evenly py-6'>
-                <img src={HTML} style={{ width: "50px" }} />
-                <img src={CSS} style={{ width: "50px" }} />
-                <img src={JS} style={{ width: "50px" }} />
-                <img src={REACTICON} style={{ width: "50px" }} />
-                <img src={DB} style={{ width: "50px" }} />
-                <img src={NODE} style={{ width: "50px" }} />
+                <img src={HTML} style={{ width: "50px" }} alt="HTML" />
+                <img src={CSS} style={{ width: "50px" }} alt="CSS" />
+                <img src={JS} style={{ width: "50px" }} alt="JavaScript" />
+                <img src={REACTICON} style={{ width: "50px" }} alt="React" />
+                <img src={DB} style={{ width: "50px" }} alt="Database" />
+                <img src={NODE} style={{ width: "50px" }} alt="Node.js" />
             </div>
 
             <div className='flex flex-col mt-10 items-center justify-around sm:flex-row'>
@@ -86,7 +85,7 @@ function Home() {
 
             <div className='flex items-center justify-center my-14'>
                 <div className='justify-center hidden sm:block'>
-                    <img src={BlogImage} className='w-60 md:w-96 ' alt="Blog Profile Image" />
+                    <img src={BlogImage} className='w-60 md:w-96 ' alt="Blog Profile" />
 
                 </div>
                 <div className="w-full sm:w-1/2 flex-col justify-center ml-6">
@@ -101,7 +100,7 @@ function Home() {
             </div>
 
 
-            <Footer/>
+            <Footer />
 
 
         </div>

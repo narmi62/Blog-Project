@@ -1,4 +1,4 @@
-import React, { useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import auth from "../config/firebase"
 import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
@@ -13,14 +13,14 @@ function Signup() {
 
 
     useEffect(() => {
-        auth.onAuthStateChanged(function (user) {
+        const unsubscribe = auth.onAuthStateChanged(function (user) {
             if (user) {
-                navigate('/home')
+                navigate('/home');
             }
+        });
 
-        })
-
-    }, [])
+        return () => unsubscribe();
+    }, [navigate]);
 
 
 
