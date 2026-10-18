@@ -28,7 +28,7 @@ function Blogs() {
                 }
             }
         })
-        axios.get("http://localhost:5000/api/blogs").then((res) => {
+        axios.get("https://blog-project-2t4w.onrender.com/api/blogs").then((res) => {
             console.log(res.data)
             setBlogs(res.data)
         }).catch(() => {
@@ -45,10 +45,10 @@ function Blogs() {
 
     const handleLike = async (blog_id) => {
         try {
-            const response = await axios.patch(`http://localhost:5000/api/blogs/like/${blog_id}`);
+            const response = await axios.patch(`https://blog-project-2t4w.onrender.com/api/blogs/like/${blog_id}`);
             // After successfully updating the likes count in the backend, fetch the updated list of blogs
             if (response.status === 200) {
-                axios.get("http://localhost:5000/api/blogs").then((res) => {
+                axios.get("https://blog-project-2t4w.onrender.com/api/blogs").then((res) => {
                     console.log(res.data)
                     setBlogs(res.data)
                 }).catch(() => {
@@ -67,10 +67,10 @@ function Blogs() {
 
 
         const likes = 0
-        axios.post("http://localhost:5000/api/blogs", { newTitle, date, newContent, likes }).then((res) => {
+        axios.post("https://blog-project-2t4w.onrender.com/api/blogs", { newTitle, date, newContent, likes }).then((res) => {
             console.log(res.data)
 
-            axios.get("http://localhost:5000/api/blogs").then((res) => {
+            axios.get("https://blog-project-2t4w.onrender.com/api/blogs").then((res) => {
                 console.log(res.data)
                 setBlogs(res.data)
             }).catch(() => {
@@ -95,18 +95,19 @@ function Blogs() {
 
     const handleUpdate = (event) => {
         event.preventDefault()
-        axios.put(`http://localhost:5000/api/blogs/${editID}`, { newTitle, newContent }).then((res) => {
+        axios.put(`https://blog-project-2t4w.onrender.com/api/blogs/${editID}`, { newTitle, newContent }).then((res) => {
             console.log(res.data)
-            axios.get("http://localhost:5000/api/blogs").then((res) => {
-                console.log(res.data)
-                setBlogs(res.data)
-                setEditID('')
-                setNewTitle('')
-                setNewContent('')
+            axios.get("https://blog-project-2t4w.onrender.com/api/blogs")
+                .then((res) => {
+                    console.log(res.data)
+                    setBlogs(res.data)
+                    setEditID('')
+                    setNewTitle('')
+                    setNewContent('')
 
-            }).catch((error) => {
-                console.log("Error fetching data,error")
-            })
+                }).catch((error) => {
+                    console.log("Error fetching data,error")
+                })
         }).catch((error) => {
             console.log("Error updating blog", error)
         })
@@ -119,10 +120,10 @@ function Blogs() {
             "Are you sure you want to delete this blog?"
         )
         if (conFirmDelete) {
-            axios.delete(`http://localhost:5000/api/blogs/${blog_id}`)
+            axios.delete(`https://blog-project-2t4w.onrender.com/api/blogs/${blog_id}`)
                 .then((res) => {
                     console.log(res.data)
-                    axios.get("http://localhost:5000/api/blogs").then((res) => {
+                    axios.get("https://blog-project-2t4w.onrender.com/api/blogs").then((res) => {
                         console.log(res.data)
                         setBlogs(res.data)
                     }).catch((err) => {
